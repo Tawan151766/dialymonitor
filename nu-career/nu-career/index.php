@@ -79,10 +79,25 @@
   </div>
         <!-- Button trigger modal -->
 <div class="d-grid gap-2">
-<button type="button" class="btn btn-primary mt-2" >
+  <?php
+  if($_SESSION['workstatus_id'] == ''){
+    
+    
+    echo'<button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+      คุณมีงานทำแล้วหรือยัง
+      </button>';
+  }
+    else{
+      echo'<button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" >
     คุณทำเเบบสอบถามแล้ว
-    </button>
+    </button>';
+    
+  }
+  ?>
 </div>
+    
+  
+
 <!-- Button trigger modal -->
   </div>
 </div>
@@ -90,13 +105,45 @@
         <div class="col-8">
         <div class="d-grid gap-2 mt-2">
         <a href="logout.php" class="btn btn btn-danger mb-5 mt-2">LOGOUT</a>
-        <?php
+        <?php 
+        $student_code = $_SESSION['std_id'];
+        $sql   = "SELECT * FROM `d_students` WHERE `d_students`.`std_id`= '$student_code';";
+        $query = mysqli_query($connection, $sql);
+        $result = mysqli_fetch_array($query);
+
+
+
+          if($result['workstatus_id'] == ''){}
+
+
+          
+          else if($result['workstatus_id'] == '3'){
+            echo'<button class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Part 3 แบบสอบถามสำหรับผู้ที่ยังไม่มีงานทำ For those who has no job</button>';
+            $sql1   = "SELECT * FROM `qt_not_work` WHERE `qt_not_work`.`std_id`= '$student_code';";
+            $query1 = mysqli_query($connection, $sql1);
+            $result1 = mysqli_fetch_array($query1);
+            if($result1['desire_study_id'] == '1'){
+              echo'<button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3">Part 4  แบบสอบถามสำหรับผู้ตัองการศึกษาต่อ Further study</button>';
+            }else{
+              echo'';
+            }
+          }
+          
+          
+          
+          
+          
+          else{
+            echo'<button class="btn btn-success mt-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Part 2 แบบสอบถามสำหรับผู้ที่มีงานทำ For Employed</button>';
+          }
+          ?>
+  
+          
         
-    echo'<button class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Part 3 แบบสอบถามสำหรับผู้ที่ยังไม่มีงานทำ For those who has no job</button>';
-    echo'<button class="btn btn-success mt-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Part 2 แบบสอบถามสำหรับผู้ที่มีงานทำ For Employed</button>';?>
+    
+    
   
   
-  <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3">Part 4  แบบสอบถามสำหรับผู้ตัองการศึกษาต่อ Further study</button>
   <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>
 
 <!-- Modal -->
