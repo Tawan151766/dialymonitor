@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2023 at 03:16 AM
+-- Generation Time: Feb 14, 2023 at 08:21 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -12774,7 +12774,7 @@ CREATE TABLE `d_students` (
 --
 
 INSERT INTO `d_students` (`fullname`, `std_id`, `gender`, `degree`, `date_of_birth`, `CITIZEN_ID`, `program_id`, `faculty_id`, `address`, `add_SubDistinct_Name`, `add_Distinct_Name`, `add_Province`, `Phone`, `email`, `workstatus_id`) VALUES
-('1234', '2222', 'Male', 'normal', '0000-00-00', '2222', '11303110060', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
+('1234', '2222', 'Male', 'normal', '0000-00-00', '2222', '11303110060', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5);
 
 -- --------------------------------------------------------
 
