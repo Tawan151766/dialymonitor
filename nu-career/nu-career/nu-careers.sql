@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 13, 2023 at 12:26 AM
+-- Host: 127.0.0.1
+-- Generation Time: Feb 14, 2023 at 03:16 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -9945,7 +9945,11 @@ CREATE TABLE `d_addr_workplace` (
 --
 
 INSERT INTO `d_addr_workplace` (`add_wp_ID`, `std_id`, `add_name`, `workplace_tel`, `workplace_fax`, `workplace_email`, `workplace_number`, `village_number`, `building_name`, `floor`, `alley_or_ane`, `street_name`, `province_id`, `amphure_id`, `districts_id`) VALUES
-(4, '62000004', 'nb robot', '1234', '1234', 'kg@gmail.com', '123', '1234', '1234', '1234', '1', 'nb', 1, 2, '100203');
+(4, '62000004', 'nb robot', '1234', '1234', 'kg@gmail.com', '123', '1234', '1234', '1234', '1', 'nb', 1, 2, '100203'),
+(5, '2222', '111', '11', '11', '11', '11', '11', '11', '11', '11', '11', 58, 811, '730501'),
+(6, '2222', '', '', '', '', '', '', '', '', '', '', 0, 0, ''),
+(7, '2222', '', '', '', '', '', '', '', '', '', '', 0, 0, ''),
+(8, '2222', '', '', '', '', '', '', '', '', '', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -10233,8 +10237,7 @@ INSERT INTO `d_disclosure_agreement` (`disclosure_agree_id`, `disclosure_agree_d
 --
 
 CREATE TABLE `d_faculty` (
-  `id` int(11) NOT NULL,
-  `fac_id` int(11) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
   `fac_name` varchar(255) DEFAULT NULL,
   `fac_group` varchar(1) DEFAULT NULL,
   `status` varchar(2) DEFAULT 'Y'
@@ -10244,33 +10247,33 @@ CREATE TABLE `d_faculty` (
 -- Dumping data for table `d_faculty`
 --
 
-INSERT INTO `d_faculty` (`id`, `fac_id`, `fac_name`, `fac_group`, `status`) VALUES
-(1, 1, 'สำนักงานอธิการบดี', '2', 'Y'),
-(2, 55, 'บัณฑิตวิทยาลัย', '1', 'Y'),
-(3, 57, 'คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม', '1', 'Y'),
-(4, 62, 'คณะทันตแพทยศาสตร์', '1', 'Y'),
-(5, 69, 'คณะนิติศาสตร์', '1', 'Y'),
-(6, 71, 'คณะพยาบาลศาสตร์', '1', 'Y'),
-(7, 74, 'คณะแพทยศาสตร์', '1', 'Y'),
-(8, 88, 'คณะเภสัชศาสตร์', '1', 'Y'),
-(9, 93, 'คณะมนุษยศาสตร์', '1', 'Y'),
-(10, 95, 'คณะบริหารธุรกิจ เศรษฐศาสตร์และการสื่อสาร', '1', 'Y'),
-(11, 97, 'คณะวิทยาศาสตร์', '1', 'Y'),
-(12, 104, 'คณะวิทยาศาสตร์การแพทย์', '1', 'Y'),
-(13, 110, 'คณะวิศวกรรมศาสตร์', '1', 'Y'),
-(14, 116, 'คณะศึกษาศาสตร์', '1', 'Y'),
-(15, 121, 'คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ', '1', 'Y'),
-(16, 123, 'คณะสหเวชศาสตร์', '1', 'Y'),
-(17, 129, 'คณะสังคมศาสตร์', '1', 'Y'),
-(18, 131, 'คณะสาธารณสุขศาสตร์', '1', 'Y'),
-(19, 133, 'วิทยาลัยนานาชาติ', '1', 'Y'),
-(20, 135, 'วิทยาลัยพลังงานทดแทนและสมาร์ตกริดเทคโนโลยี', '1', 'Y'),
-(21, 141, 'สำนักหอสมุด', '2', 'Y'),
-(22, 800, 'คณะโลจิสติกส์และดิจิทัลซัพพลายเชน', '1', 'Y'),
-(23, 820, 'วิทยาลัยเพื่อการค้นคว้าระดับรากฐาน', '1', 'Y'),
-(24, 1500, 'วิทยาลัยประชาคมอาเซียนศึกษา', '2', 'Y'),
-(25, 1780, 'วิทยาลัยการจัดการระบบสุขภาพ', '2', 'Y'),
-(26, 2267, 'สำนักงานสภามหาวิทยาลัย', '2', 'Y');
+INSERT INTO `d_faculty` (`faculty_id`, `fac_name`, `fac_group`, `status`) VALUES
+(1, 'สำนักงานอธิการบดี', '2', 'Y'),
+(55, 'บัณฑิตวิทยาลัย', '1', 'Y'),
+(57, 'คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม', '1', 'Y'),
+(62, 'คณะทันตแพทยศาสตร์', '1', 'Y'),
+(69, 'คณะนิติศาสตร์', '1', 'Y'),
+(71, 'คณะพยาบาลศาสตร์', '1', 'Y'),
+(74, 'คณะแพทยศาสตร์', '1', 'Y'),
+(88, 'คณะเภสัชศาสตร์', '1', 'Y'),
+(93, 'คณะมนุษยศาสตร์', '1', 'Y'),
+(95, 'คณะบริหารธุรกิจ เศรษฐศาสตร์และการสื่อสาร', '1', 'Y'),
+(97, 'คณะวิทยาศาสตร์', '1', 'Y'),
+(104, 'คณะวิทยาศาสตร์การแพทย์', '1', 'Y'),
+(110, 'คณะวิศวกรรมศาสตร์', '1', 'Y'),
+(116, 'คณะศึกษาศาสตร์', '1', 'Y'),
+(121, 'คณะสถาปัตยกรรมศาสตร์ ศิลปะและการออกแบบ', '1', 'Y'),
+(123, 'คณะสหเวชศาสตร์', '1', 'Y'),
+(129, 'คณะสังคมศาสตร์', '1', 'Y'),
+(131, 'คณะสาธารณสุขศาสตร์', '1', 'Y'),
+(133, 'วิทยาลัยนานาชาติ', '1', 'Y'),
+(135, 'วิทยาลัยพลังงานทดแทนและสมาร์ตกริดเทคโนโลยี', '1', 'Y'),
+(141, 'สำนักหอสมุด', '2', 'Y'),
+(800, 'คณะโลจิสติกส์และดิจิทัลซัพพลายเชน', '1', 'Y'),
+(820, 'วิทยาลัยเพื่อการค้นคว้าระดับรากฐาน', '1', 'Y'),
+(1500, 'วิทยาลัยประชาคมอาเซียนศึกษา', '2', 'Y'),
+(1780, 'วิทยาลัยการจัดการระบบสุขภาพ', '2', 'Y'),
+(2267, 'สำนักงานสภามหาวิทยาลัย', '2', 'Y');
 
 -- --------------------------------------------------------
 
@@ -12755,7 +12758,7 @@ CREATE TABLE `d_students` (
   `degree` varchar(50) NOT NULL,
   `date_of_birth` date NOT NULL,
   `CITIZEN_ID` varchar(13) DEFAULT NULL,
-  `program_id` varchar(255) DEFAULT NULL,
+  `program_id` varchar(50) DEFAULT NULL,
   `faculty_id` int(11) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `add_SubDistinct_Name` varchar(255) DEFAULT NULL,
@@ -12771,8 +12774,7 @@ CREATE TABLE `d_students` (
 --
 
 INSERT INTO `d_students` (`fullname`, `std_id`, `gender`, `degree`, `date_of_birth`, `CITIZEN_ID`, `program_id`, `faculty_id`, `address`, `add_SubDistinct_Name`, `add_Distinct_Name`, `add_Province`, `Phone`, `email`, `workstatus_id`) VALUES
-('test', '1234', '', '', '2023-02-06', '1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
-('Tawan Chankachang', '62000004', 'Male', 'normal', '2000-09-09', '1111', '1', 301, '1', '1', '1', '1', '1', 'tw@cpu.ac.th', 1);
+('1234', '2222', 'Male', 'normal', '0000-00-00', '2222', '11303110060', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -14067,6 +14069,27 @@ INSERT INTO `d_time_findwork` (`time_findwork_id`, `time_findwork_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `d_type_uni`
+--
+
+CREATE TABLE `d_type_uni` (
+  `type_univ_id` int(11) NOT NULL,
+  `type_univ_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `d_type_uni`
+--
+
+INSERT INTO `d_type_uni` (`type_univ_id`, `type_univ_name`) VALUES
+(1, 'type1'),
+(2, 'type2'),
+(3, 'type1'),
+(4, 'type2');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `d_worktype`
 --
 
@@ -14149,12 +14172,25 @@ CREATE TABLE `job_application_work` (
   `desire_study_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `job_application_work`
+-- Table structure for table `program`
 --
 
-INSERT INTO `job_application_work` (`job_application_id`, `	std_id`, `src_job_id`, `occup_type_id`, `talent_id`, `possition_id`, `worktype_id`, `salary_id`, `work_satisfy_id`, `time_findwork_id`, `match_edu_id`, `apply_edu_id`, `desire_study_id`) VALUES
-(16, '62000004', 2, 1, 1, 11010, 1, 2, 1, 2, 1, 1, 1);
+CREATE TABLE `program` (
+  `program_id` varchar(50) NOT NULL,
+  `program_name` varchar(100) NOT NULL,
+  `faculty_id` int(11) NOT NULL,
+  `p1abb` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `program`
+--
+
+INSERT INTO `program` (`program_id`, `program_name`, `faculty_id`, `p1abb`) VALUES
+('11303110060', 'test', 203, 'วทบ');
 
 -- --------------------------------------------------------
 
@@ -14256,11 +14292,52 @@ INSERT INTO `provinces` (`province_id`, `code`, `name_th`, `name_en`, `geography
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `qt_future_study`
+--
+
+CREATE TABLE `qt_future_study` (
+  `qt_future_study_id` int(11) NOT NULL,
+  `std_id` varchar(8) NOT NULL,
+  `lev_edu_id` int(11) NOT NULL,
+  `major_ID` int(11) NOT NULL,
+  `type_univ_id` int(11) NOT NULL,
+  `cause_edu_id` int(11) NOT NULL,
+  `prob_edu_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `qt_not_work`
 --
 
 CREATE TABLE `qt_not_work` (
-  `qt_not_work_id` int(11) NOT NULL
+  `qt_not_work_id` int(11) NOT NULL,
+  `std_id` varchar(8) NOT NULL,
+  `cause_nowork_id` int(11) NOT NULL,
+  `prob_findwork_id` int(11) NOT NULL,
+  `desired_position` varchar(255) NOT NULL,
+  `dev_skills` varchar(255) NOT NULL,
+  `disclosure_agree_id` int(11) NOT NULL,
+  `desire_study_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `qt_suggestion`
+--
+
+CREATE TABLE `qt_suggestion` (
+  `std_id` varchar(8) NOT NULL,
+  `qt_suggestion_id` int(10) NOT NULL,
+  `facilitate_id` int(10) NOT NULL,
+  `courses` varchar(100) NOT NULL,
+  `learning` varchar(100) NOT NULL,
+  `development_activites` varchar(100) NOT NULL,
+  `knowledge` varchar(100) NOT NULL,
+  `skill_process` varchar(100) NOT NULL,
+  `reflection_behavior` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -14326,12 +14403,6 @@ ALTER TABLE `d_desire_study_further`
   ADD PRIMARY KEY (`desire_study_id`) USING BTREE;
 
 --
--- Indexes for table `d_faculty`
---
-ALTER TABLE `d_faculty`
-  ADD PRIMARY KEY (`id`) USING BTREE;
-
---
 -- Indexes for table `d_lev_degree`
 --
 ALTER TABLE `d_lev_degree`
@@ -14374,6 +14445,12 @@ ALTER TABLE `d_time_findwork`
   ADD PRIMARY KEY (`time_findwork_id`);
 
 --
+-- Indexes for table `d_type_uni`
+--
+ALTER TABLE `d_type_uni`
+  ADD PRIMARY KEY (`type_univ_id`);
+
+--
 -- Indexes for table `d_worktype`
 --
 ALTER TABLE `d_worktype`
@@ -14398,10 +14475,34 @@ ALTER TABLE `job_application_work`
   ADD PRIMARY KEY (`job_application_id`);
 
 --
+-- Indexes for table `program`
+--
+ALTER TABLE `program`
+  ADD PRIMARY KEY (`program_id`);
+
+--
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
   ADD PRIMARY KEY (`province_id`);
+
+--
+-- Indexes for table `qt_future_study`
+--
+ALTER TABLE `qt_future_study`
+  ADD PRIMARY KEY (`qt_future_study_id`);
+
+--
+-- Indexes for table `qt_not_work`
+--
+ALTER TABLE `qt_not_work`
+  ADD PRIMARY KEY (`qt_not_work_id`);
+
+--
+-- Indexes for table `qt_suggestion`
+--
+ALTER TABLE `qt_suggestion`
+  ADD PRIMARY KEY (`qt_suggestion_id`);
 
 --
 -- Indexes for table `work_status`
@@ -14423,7 +14524,7 @@ ALTER TABLE `amphures`
 -- AUTO_INCREMENT for table `d_addr_workplace`
 --
 ALTER TABLE `d_addr_workplace`
-  MODIFY `add_wp_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `add_wp_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `d_department`
@@ -14436,12 +14537,6 @@ ALTER TABLE `d_department`
 --
 ALTER TABLE `d_desire_study_further`
   MODIFY `desire_study_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `d_faculty`
---
-ALTER TABLE `d_faculty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `d_salary`
@@ -14460,6 +14555,12 @@ ALTER TABLE `d_talent`
 --
 ALTER TABLE `d_time_findwork`
   MODIFY `time_findwork_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `d_type_uni`
+--
+ALTER TABLE `d_type_uni`
+  MODIFY `type_univ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `d_worktype`
@@ -14483,13 +14584,31 @@ ALTER TABLE `geographies`
 -- AUTO_INCREMENT for table `job_application_work`
 --
 ALTER TABLE `job_application_work`
-  MODIFY `job_application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `job_application_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `provinces`
 --
 ALTER TABLE `provinces`
   MODIFY `province_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT for table `qt_future_study`
+--
+ALTER TABLE `qt_future_study`
+  MODIFY `qt_future_study_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `qt_not_work`
+--
+ALTER TABLE `qt_not_work`
+  MODIFY `qt_not_work_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `qt_suggestion`
+--
+ALTER TABLE `qt_suggestion`
+  MODIFY `qt_suggestion_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `work_status`
