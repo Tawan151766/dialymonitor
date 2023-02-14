@@ -12,4 +12,5 @@ $pwd_crm        = "";
 $dbname_crm     = "nu-careers";
 $connection_crm = mysqli_connect($server_crm, $user_crm, $pwd_crm, $dbname_crm);
 $connection_crm->set_charset("utf8");
+error_reporting(0)
 ?>
