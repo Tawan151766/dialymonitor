@@ -124,6 +124,31 @@
             $result1 = mysqli_fetch_array($query1);
             if($result1['desire_study_id'] == '1'){
               echo'<button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3">Part 4  แบบสอบถามสำหรับผู้ตัองการศึกษาต่อ Further study</button>';
+              $sql2   = "SELECT * FROM `qt_future_study` WHERE `qt_future_study`.`std_id`= '$student_code';";
+              $query2 = mysqli_query($connection, $sql2);
+              $result2 = mysqli_fetch_array($query2);
+              $num   = mysqli_num_rows($query2);
+              if($num > 0){
+                echo'<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>';
+                $sql3   = "SELECT * FROM `qt_suggestion` WHERE `qt_suggestion`.`std_id`= '$student_code';";
+                $query3 = mysqli_query($connection, $sql3);
+                $result3 = mysqli_fetch_array($query3);
+                $num3   = mysqli_num_rows($query3);
+              if($num3 > 0){
+              
+                echo'<div class="alert alert-success" role="alert">Success</div>';
+              }
+              }
+            }else if($result1['desire_study_id'] == '2'){
+              echo'<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>';
+              $sql3   = "SELECT * FROM `qt_suggestion` WHERE `qt_suggestion`.`std_id`= '$student_code';";
+              $query3 = mysqli_query($connection, $sql3);
+              $result3 = mysqli_fetch_array($query3);
+              $num3   = mysqli_num_rows($query3);
+            if($num3 > 0){
+              
+              echo'<div class="alert alert-success" role="alert">Success</div>';
+            }
             }else{
               echo'';
             }
@@ -135,6 +160,39 @@
           
           else{
             echo'<button class="btn btn-success mt-5" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Part 2 แบบสอบถามสำหรับผู้ที่มีงานทำ For Employed</button>';
+            $sql1   = "SELECT * FROM `job_application_work` WHERE `job_application_work`.`	std_id` = '$student_code';";
+            $query1 = mysqli_query($connection, $sql1);
+            $result1 = mysqli_fetch_array($query1);
+            if($result1['desire_study_id'] == '1'){
+              echo'<button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3">Part 4  แบบสอบถามสำหรับผู้ตัองการศึกษาต่อ Further study</button>';
+              $sql2   = "SELECT * FROM `qt_future_study` WHERE `qt_future_study`.`std_id`= '$student_code';";
+              $query2 = mysqli_query($connection, $sql2);
+              $result2 = mysqli_fetch_array($query2);
+              $num   = mysqli_num_rows($query2);
+              if($num > 0){
+                echo'<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>';
+                $sql3   = "SELECT * FROM `qt_suggestion` WHERE `qt_suggestion`.`std_id`= '$student_code';";
+                $query3 = mysqli_query($connection, $sql3);
+                $result3 = mysqli_fetch_array($query3);
+                $num3   = mysqli_num_rows($query3);
+              if($num3 > 0){
+              
+                echo'<div class="alert alert-success" role="alert">Success</div>';
+              }
+              }
+            }else if($result1['desire_study_id'] == '2'){
+              echo'<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>';
+              $sql3   = "SELECT * FROM `qt_suggestion` WHERE `qt_suggestion`.`std_id`= '$student_code';";
+              $query3 = mysqli_query($connection, $sql3);
+              $result3 = mysqli_fetch_array($query3);
+              $num3   = mysqli_num_rows($query3);
+            if($num3 > 0){
+              
+              echo'<div class="alert alert-success" role="alert">Success</div>';
+            }
+            }else{
+              echo'';
+            }
           }
           ?>
   
@@ -144,7 +202,7 @@
     
   
   
-  <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Part 5 ข้อเสนอแนะ Suggestions</button>
+  
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
